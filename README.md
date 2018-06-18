@@ -1,5 +1,12 @@
 # Setting up an Aurelia project with KendoUI and Bootstrap 4, bundled with Webpack.
 
+## Running this project
+
+1. Install dependencies: `npm install`
+2. Run via the CLI (you MUST specify the --watch argument due to a Webpack bug, see below): `au run --watch`
+
+## How I set this project up
+
 1. Provision the project with the Aurelia CLI: 
 ```bash
 au new <project name>
@@ -50,15 +57,10 @@ Then, add this rule to the rules collection of webpack.config.js:
 }
 ```
 
-** Currently there is a bug with Webpack using `au run`. Webpack appears to run fine and everything looks ok until you go to the site (default localhost:8080), at which time Webpack will emit an error about "You ran Webpack twice." There is an issue filed on Github for the Aurelia-CLI here: https://github.com/aurelia/cli/issues/852. You can get around this error running with the watch tag: `au run --watch`.
+## Other notes
 
-Good walkthrough here: https://bartvanuden.azurewebsites.net/2017/09/23/aurelia-kendoui-bridge/
+* Currently there is a bug with Webpack using `au run`. Webpack appears to run fine and everything looks ok until you go to the site (default localhost:8080), at which time Webpack will emit an error about "You ran Webpack twice." There is an issue filed on Github for the Aurelia-CLI here: https://github.com/aurelia/cli/issues/852. You can get around this error running with the watch tag: `au run --watch`.
 
-### Adding Bootstrap to a template
+* Good walkthrough here: https://bartvanuden.azurewebsites.net/2017/09/23/aurelia-kendoui-bridge/
 
-```html
-<template>
-  <require from="bootstrap/dist/css/bootstrap.css"></require>
-</template>
-```
 
