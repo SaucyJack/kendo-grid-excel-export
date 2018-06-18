@@ -1,0 +1,13 @@
+<template>
+  <require from="aurelia-kendoui-bridge/grid/grid"></require>
+  <require from="aurelia-kendoui-bridge/grid/col"></require>
+  <h2>Hello World!</h2>
+  <div class="row">
+    <ak-grid k-data-source.bind="datasource"
+      k-toolbar.bind="['excel']"
+      k-excel.bind="{ fileName: 'TestExportSystemJs.xlsx' }">
+      <ak-col k-field="thing1" k-title="Some Number"></ak-col>
+      <ak-col k-field="name" k-title="Name"></ak-col>
+    </ak-grid>
+  </div>
+</template>
