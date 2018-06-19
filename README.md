@@ -63,4 +63,16 @@ Then, add this rule to the rules collection of webpack.config.js:
 
 * Good walkthrough here: https://bartvanuden.azurewebsites.net/2017/09/23/aurelia-kendoui-bridge/
 
+* To observe where the error occurs, since it does not show an error in Chrome Debugger, add a `console.log` statement to the `kendo.ooxml.createZip` function in node_modules/@progress/kendo-ui/js/ooxml/utils.j, something like this:
+```javascript
+kendo.ooxml.createZip = function() {
+  if (typeof JSZip === "undefined") {
+    console.log('utils.js - JSZip is undefined');
+    throw new Error("JSZip not found. Check http://docs.telerik.com/kendo-ui/framework/excel/introduction#requirements for more details.");
+  }
+
+  return new JSZip();
+};
+```
+
 
